@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="person : ${persons}">
+    <h2 th:inline="text"> name: [[${person.name}]]</h2>
+    <h4>Passport info:</h4>
+    <ul>
+        <th:block th:object="${person.passport}">
+
+            <li th:inline="text"> Passport Number: [[*{passportNumber}]]</li>
+            <li th:inline="text"> Passport Number: [[*{expDate}]]</li>
+        </th:block>
+    </ul>
+</div>
+</body>
+</html>
